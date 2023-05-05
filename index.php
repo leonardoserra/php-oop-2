@@ -1,10 +1,26 @@
 <?php 
 
-require_once __DIR__ . "Models/Products.php";
-// require_once __DIR__ . "Models/Category.php";
+require_once __DIR__ . '/Models/Products.php';
+require_once __DIR__ . '/Models/Categories.php';
 
-$ball = new Product('ball',15);
+$categories = [
+    $dog = new Category('dog'),
+    $cat = new Category('cat')
+];
+
+
+
+$ball = new Product('ball',15, $categories);
+$meat = new Product('meat',5, $categories);
 var_dump($ball);
+
+echo "name: $ball->name";
+echo '<br>';
+echo "prezzo: $ball->price";
+echo '<br>';
+echo "sconto: $ball->discount";
+echo '<br>';
+var_dump($ball->category[0]);
 
 
 
