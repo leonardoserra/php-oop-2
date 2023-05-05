@@ -7,10 +7,10 @@ class Product{
     public $name;
     public $price;
     public $discount = 0;
-    public $category = [];
+    public $category;
 
 
-    public function __construct($name, $price, array $categories){
+    public function __construct($name, $price, Category $categories){
         $this->name = $name;
         $this->price = $price;
         $this->category = $categories;
