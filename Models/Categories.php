@@ -6,7 +6,7 @@ class Category{
 
     public function __construct($categoryName){
         $this->categoryName = $categoryName;
-    
+        
     }
 
 }

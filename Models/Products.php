@@ -6,8 +6,9 @@ require_once __DIR__ . '/Categories.php';
 class Product{
     public $name;
     public $price;
-    public $discount = 0;
-    public $category = [];
+    public $type = 'general';
+    protected $discount = 0;
+    public $category = 'general';
 
 
     public function __construct($name, $price, Category $category){
