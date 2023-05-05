@@ -1,7 +1,9 @@
 <?php 
 
+require_once './Models/Products.php';
 
-//codice php
+$ball = new Product('ball',15);
+var_dump($ball);
 
 
 
