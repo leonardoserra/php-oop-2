@@ -1,6 +1,7 @@
 <?php 
 
-require_once './Models/Products.php';
+require_once __DIR__ . "Models/Products.php";
+// require_once __DIR__ . "Models/Category.php";
 
 $ball = new Product('ball',15);
 var_dump($ball);
