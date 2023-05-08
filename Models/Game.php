@@ -12,6 +12,15 @@ class Game extends Product{
         $this->dimension = $dimension;
     }
 
+    public function getGameVersion($gameVersion){
+        
+        if(!is_integer($gameVersion) ){
+            throw new Exception('bisogna inserire un numero intero!');
+        }
+
+        return "hai scelto la versione $gameVersion del gioco";
+    }
+
 }
 
 ?>

@@ -12,7 +12,7 @@ trait Compostable{
         if($this->biologic){
             return "il prodotto è biodegradabile";
         }else{
-            return "il prodotto $productName va smaltito correttamente";
+            return "<br/> il prodotto $productName va smaltito correttamente";
         }
     }
 }

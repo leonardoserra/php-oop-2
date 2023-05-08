@@ -21,6 +21,12 @@ $meat->img_url = './images/general.jpg';
 $catBall = new Game('catBall', 11, $cat, 'ball', '20cm');
 $catBall->img_url = './images/game.jpg';
 
+try{
+    echo $catBall->getGameVersion('56');
+}catch(Exception $e){
+    echo "attenzione: " . $e->getMessage();
+}
+
 $dogFood = new Food('dogFood', 3, $dog, 'food','1kg');
 $dogFood->img_url = './images/food.jpg';
 $dogFood->setCompostability(false);
