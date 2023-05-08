@@ -4,6 +4,8 @@ require_once __DIR__ . '/Models/Products.php';
 require_once __DIR__ . '/Models/Categories.php';
 require_once __DIR__ . '/Models/Food.php';
 require_once __DIR__ . '/Models/Game.php';
+require_once __DIR__ . '/Traits/Compostable.php';
+
 
 $general = new Category('general');
 $dog = new Category('dog');
@@ -21,6 +23,8 @@ $catBall->img_url = './images/game.jpg';
 
 $dogFood = new Food('dogFood', 3, $dog, 'food','1kg');
 $dogFood->img_url = './images/food.jpg';
+$dogFood->setCompostability(false);
+echo $dogFood->getCompostability($dogFood->name);
 
 
 $products = [

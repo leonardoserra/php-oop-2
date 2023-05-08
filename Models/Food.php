@@ -1,6 +1,9 @@
 <?php 
 
+require_once __DIR__ . '/../Traits/Compostable.php';
 class Food extends Product{
+
+    use Compostable;
     public $type;
     public $quantity;
 
@@ -9,6 +12,8 @@ class Food extends Product{
         $this->type = $type;
         $this->quantity = $quantity;
     }
+
+   
 }
 
 ?>
