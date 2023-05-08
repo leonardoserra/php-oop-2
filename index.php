@@ -20,6 +20,13 @@ $catBall = new Game('catBall', 11, $cat, 'ball', '20cm');
 $dogFood = new Food('dogFood', 3, $dog, 'food','1kg');
 // var_dump($dogFood);
 
+$products = [
+    $glasses,
+    $meat,
+    $catBall,
+    $dogFood
+]
+
 ?>
 
 <!DOCTYPE html>
@@ -39,44 +46,20 @@ $dogFood = new Food('dogFood', 3, $dog, 'food','1kg');
 
         <div class="container mt-5">
             <div class="row">
-                <div class="col-4">
+                <?php foreach($products as $product){?>
+                <div class="col-3">
                     <div class="card" style="width: 18rem;">
                         <img src="./images/general.jpg" class="card-img-top" alt="general">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo "Article: $glasses->name";?></h5>
-                            <h6 class="card-title"><?php echo "Price: $glasses->price €";?></h6>
-                            <h6 class="card-title"><?php echo "Type: $glasses->type";?></h6>
+                            <h5 class="card-title"><?php echo "Article: $product->name";?></h5>
+                            <h6 class="card-title"><?php echo "Price: $product->price €";?></h6>
+                            <h6 class="card-title"><?php echo "Type: $product->type";?></h6>
                             <br/>
                             <a href="#" class="btn btn-primary">Buy!</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="./images/food.jpg" class="card-img-top" alt="food">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo "Article: $dogFood->name";?></h5>
-                            <h6 class="card-title"><?php echo "Price: $dogFood->price €";?></h6>
-                            <h6 class="card-title"><?php echo "Type: $dogFood->type";?></h6>
-                            <h6 class="card-title"><?php echo "Type: $dogFood->quantity";?></h6>
-                            <a href="#" class="btn btn-primary">Buy!</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="./images/game.jpg"  class="card-img-top" alt="game">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo "Article: $catBall->name";?></h5>
-                            <h6 class="card-title"><?php echo "Price: $catBall->price €";?></h6>
-                            <h6 class="card-title"><?php echo "Type: $catBall->dimension";?></h6>
-                            <h6 class="card-title"><?php echo "Type: $catBall->type";?></h6>
-                            <a href="#" class="btn btn-primary">Buy!</a>
-                        </div>
-                    </div>
-                </div>
+                <?php }?>
             </div>
         </div>
     </body>
