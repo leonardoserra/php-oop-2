@@ -9,6 +9,7 @@ class Product{
     public $type = 'general';
     protected $discount = 0;
     public $category = 'general';
+    public $img_url;
 
 
     public function __construct($name, $price, Category $category){

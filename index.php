@@ -6,19 +6,22 @@ require_once __DIR__ . '/Models/Food.php';
 require_once __DIR__ . '/Models/Game.php';
 
 $general = new Category('general');
-
 $dog = new Category('dog');
 $cat = new Category('cat');
 
 
 $glasses = new Product('glasses',15, $general);
-// var_dump($glasses);
+$glasses->img_url = './images/general.jpg';
+
 $meat = new Product('meat',5, $general);
-// var_dump($meat);
+$meat->img_url = './images/general.jpg';
+
 $catBall = new Game('catBall', 11, $cat, 'ball', '20cm');
-// var_dump($catBall);
+$catBall->img_url = './images/game.jpg';
+
 $dogFood = new Food('dogFood', 3, $dog, 'food','1kg');
-// var_dump($dogFood);
+$dogFood->img_url = './images/food.jpg';
+
 
 $products = [
     $glasses,
@@ -49,7 +52,7 @@ $products = [
                 <?php foreach($products as $product){?>
                 <div class="col-3">
                     <div class="card" style="width: 18rem;">
-                        <img src="./images/general.jpg" class="card-img-top" alt="general">
+                        <img src=<?php echo $product->img_url; ?> class="card-img-top" alt="general">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo "Article: $product->name";?></h5>
                             <h6 class="card-title"><?php echo "Price: $product->price €";?></h6>
